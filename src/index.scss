@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  body {
+    @apply font-primary text-base font-normal mx-auto;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    max-width: 1440px;
+  }
+}
+input:focus + .error-input {
+  display: none;
+}
+.error-input {
+  pointer-events: none;
+}
+input {
+  outline: none;
+}
+// a.active .icon-sideBar {
+//   color: #1dc071;
+//   background-color: #d0f0e1;
+// }
+.icon-sideBar {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+.description-item,
+.title-item {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+}
+.quill {
+  @apply border border-primary rounded-2xl font-primary;
+}
+.ql-container.ql-snow,
+.ql-toolbar.ql-snow,
+.ql-editor {
+  border: none !important ;
+}
+.ql-toolbar.ql-snow {
+  @apply flex items-center rounded-lg justify-center bg-text4 bg-opacity-20 w-full;
+}
+.ql-container.ql-snow {
+  @apply w-full h-[200px];
+}
+.ql-editor.ql-blank::before {
+  @apply text-text4 font-medium text-sm;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+body .react-date-picker {
+  @apply dark:bg-darkStroke py-4 px-6 border  text-sm dark:text-white text-text1 rounded-lg w-full placeholder:text-text4  border-primary;
+  .react-date-picker__wrapper {
+    @apply border-none;
+  }
+  .react-calendar__navigation button:enabled:hover,
+  .react-calendar__navigation button:enabled:focus {
+    @apply bg-transparent text-primary;
+  }
+  .react-calendar__tile:enabled:hover,
+  .react-calendar__tile:enabled:focus {
+    @apply bg-transparent text-primary;
+  }
+  .react-calendar__tile--active:enabled:hover,
+  .react-calendar__tile--active:enabled:focus {
+    @apply bg-primary text-white;
+  }
+  .react-calendar__tile--active {
+    @apply bg-primary text-white;
+  }
+  // .react-date-picker__calendar--open,
+  // .react-date-picker__calendar--closed {
+  //   position: absolute;
+  // }
+  // .react-date-picker__wrapper {
+  //   @apply flex;
+  // }
+}
+.icon-sideBar:hover {
+  @apply text-primary bg-primary bg-opacity-20 transition-all;
+}
